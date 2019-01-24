@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14135" systemVersion="17G65" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Workout" representedClassName="Workout" syncable="YES" codeGenerationType="class">
+        <attribute name="numReps" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="workout" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="workoutSession" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="WorkoutSession" inverseName="workout" inverseEntity="WorkoutSession" syncable="YES"/>
+    </entity>
+    <entity name="WorkoutHistory" representedClassName="WorkoutHistory" syncable="YES" codeGenerationType="class">
+        <relationship name="workoutSession" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="WorkoutSession" inverseName="workoutHistory" inverseEntity="WorkoutSession" syncable="YES"/>
+    </entity>
+    <entity name="WorkoutSession" representedClassName="WorkoutSession" syncable="YES" codeGenerationType="class">
+        <attribute name="bodyPart" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="date" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="workout" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Workout" inverseName="workoutSession" inverseEntity="Workout" syncable="YES"/>
+        <relationship name="workoutHistory" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="WorkoutHistory" inverseName="workoutSession" inverseEntity="WorkoutHistory" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="WorkoutHistory" positionX="-54" positionY="-9" width="128" height="60"/>
+        <element name="WorkoutSession" positionX="-36" positionY="9" width="128" height="105"/>
+        <element name="Workout" positionX="-18" positionY="54" width="128" height="90"/>
+    </elements>
+</model>

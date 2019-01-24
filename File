@@ -1,0 +1,61 @@
+
+For Workout, Scene controller:
+
+First gives a list of body
+
+        -This will bring you to another table view, which shows what workouts you are doing
+            -Option to Add, Remove, And Done
+                -For added workouts, move to next table view controller, which displays sets of workouts
+                    -Allows user to add set in this view controller
+                        -WEight and Reps
+
+            -Done returns to main screen of lists (As for now)
+
+
+
+As for now, we won't have editing features. Only allowing deletes and redo
+
+Model:
+
+Workout
+Date
+Set Number
+Weight
+
+-History shows date and next pages pretty much show the same thing as the workout
+    -Next Table View Shows the workouts you did on that date
+        -Click on the workout, and you are taken to another table view controller, which will show all the sets
+
+As for now, don't plan on having share feature for the workout history or workout. At this point, dont feel like there's a need to brag
+
+Might need a data structure to store the dates you worked out on
+
+
+
+
+Greedy Algorithm Idea:
+    We want to choose the workout that has the longest since you worked on that exercise
+        -Initialize each one first to a very high Int value
+        -Each time you work that part out, you set worked out date to that date
+
+        -When you work out, it finds the workout that has the lowest number
+        -Or if you have multiple values with the same number, choose one randomly
+
+
+//https://firebase.google.com/docs/firestore/manage-data/add-data
+
+
+Database for the Adding workout
+
+Workout:
+    WorkoutSessionID:
+        Workout Date:
+        Workouts:
+            WorkoutID:
+                Name:
+                SetID: //Maybe can call it Set <num>
+                    Weight:
+                    Rep:
+
+
+
